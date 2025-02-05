@@ -1,0 +1,4 @@
+<div *ngFor="let task of tasks; trackBy: trackByFn">
+    <app-task-item [task]="task" (delete)="deleteTask(task.id)"></app-task-item>
+  </div>
+  
