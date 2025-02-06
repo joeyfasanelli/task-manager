@@ -1,6 +1,0 @@
-<nav>
-    <a routerLink="/">Home</a> |
-    <a routerLink="/login" *ngIf="!(authService.isAuthenticated() | async)">Login</a>
-    <button *ngIf="authService.isAuthenticated() | async" (click)="logout()">Logout</button>
-  </nav>
-  
