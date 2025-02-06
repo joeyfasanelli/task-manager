@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -14,15 +15,10 @@ export class LoginComponent {
     password: new FormControl(''),
   });
 
-  errorMessage = '';
-
-  constructor(private authService: AuthService, private router: Router) {}
+  errorMessage: string = '';
 
   login() {
-    const { email, password } = this.loginForm.value;
-    this.authService.login(email!, password!).subscribe({
-      next: () => this.router.navigate(['/']),
-      error: err => this.errorMessage = 'Invalid credentials. Please try again.'
-    });
+    console.log('Login Form Submitted:', this.loginForm.value);
   }
 }
+

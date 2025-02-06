@@ -1,0 +1,62 @@
+.task-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .task-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .task-info {
+    flex-grow: 1;
+  }
+  
+  .task-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .task-desc {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  
+  .no-tasks-message {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+  }
+  

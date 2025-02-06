@@ -2,5 +2,9 @@
     <a routerLink="/">Home</a> |
     <a routerLink="/login" *ngIf="!(authService.isAuthenticated() | async)">Login</a>
     <button *ngIf="authService.isAuthenticated() | async" (click)="logout()">Logout</button>
+    <button (click)="toggleDarkMode()" class="px-4 py-2 bg-gray-900 text-white rounded">
+      Toggle Dark Mode
+    </button>
+    
   </nav>
   

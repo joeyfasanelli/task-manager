@@ -1,4 +1,23 @@
-<div *ngFor="let task of tasks; trackBy: trackByFn">
-    <app-task-item [task]="task" (delete)="deleteTask(task.id)"></app-task-item>
+<div class="task-container">
+  <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">Your Tasks</h2>
+
+  <!-- Task List -->
+  <div *ngIf="tasks.length > 0; else noTasks">
+    <div *ngFor="let task of tasks" @fadeInOut class="task-card">
+      <div class="task-info">
+        <h3 class="task-title">{{ task.title }}</h3>
+        <p class="task-desc">{{ task.description }}</p>
+      </div>
+
+      <div class="task-actions">
+        <button (click)="deleteTask(task.id)" class="delete-btn">🗑 Delete</button>
+      </div>
+    </div>
   </div>
-  
+
+  <!-- No Tasks Message -->
+  <ng-template #noTasks>
+    <p class="no-tasks-message">No tasks found. Add a new task to get started!</p>
+  </ng-template>
+</div>
+
